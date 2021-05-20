@@ -1,16 +1,16 @@
 package ejyoo.dto;
 
 public class MemberVO {
-	private String userNo;
+	private long userNo;
 	private String userId;
 	private String userPw;
 	private String userPhone;
 	private String userEmail;
 	
-	public String getUserNo() {
+	public long getUserNo() {
 		return userNo;
 	}
-	public void setUserNo(String userNo) {
+	public void setUserNo(long userNo) {
 		this.userNo = userNo;
 	}
 	public String getUserId() {
