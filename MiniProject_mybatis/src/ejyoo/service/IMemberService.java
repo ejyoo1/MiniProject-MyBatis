@@ -14,9 +14,9 @@ public interface IMemberService {
 	
 	MemberVO getMemberById(String userId) throws SQLException;
 	
-	int insertMemberByInfo(MemberVO memberDto) throws SQLException;
+	int insertMemberByInfo(MemberVO memberVo) throws SQLException;
 	
-	int updateMemberByInfo(MemberVO memberDto) throws SQLException;
+	int updateMemberByInfo(MemberVO memberVo) throws SQLException;
 	
 	int deleteMemberById(String userId) throws SQLException;
 }

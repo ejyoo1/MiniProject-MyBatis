@@ -12,20 +12,7 @@ import ejyoo.dto.MemberVO;
 import ejyoo.servlet.util.OracleMyBatisSqlSessionFactory;
 
 public class MemberServiceImpl implements IMemberService {
-//	private IMemberDAO memberDao; 
-	
-//	private MemberServiceImpl() {
-//		memberDao = MemberDAOImpl.getInstance();
-//		smc = SqlMapClientUtil.getInstance();
-//	}
-	
-//	public static IMemberSystemService getInstance() {
-//		if(mmssi == null) {
-//			mmssi = new MemberSystemServiceImpl();
-//		}
-//		return mmssi;
-//	}
-	
+
 	private IMemberDAO memberDao = new MemberDAOImpl();
 	public void setMemberDao(IMemberDAO memberDao) {
 		this.memberDao = memberDao;
@@ -77,21 +64,21 @@ public class MemberServiceImpl implements IMemberService {
 		return member;
 	}
 	@Override
-	public int insertMemberByInfo(MemberVO memberDto) throws SQLException {
+	public int insertMemberByInfo(MemberVO memberVo) throws SQLException {
 		int cnt = 0;
 		
 		SqlSession session = sqlSessionFactory.openSession();
-		cnt = memberDao.insertMemberByInfo(session, memberDto);
+		cnt = memberDao.insertMemberByInfo(session, memberVo);
 		session.close();
 		
 		return cnt;
 	}
 	@Override
-	public int updateMemberByInfo(MemberVO memberDto) throws SQLException {
+	public int updateMemberByInfo(MemberVO memberVo) throws SQLException {
 		int cnt = 0;
 		
 		SqlSession session = sqlSessionFactory.openSession();
-		cnt = memberDao.updateMemberByInfo(session, memberDto);
+		cnt = memberDao.updateMemberByInfo(session, memberVo);
 		session.close();
 		
 		return cnt;
